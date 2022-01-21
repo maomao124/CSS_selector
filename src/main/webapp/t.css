@@ -1,0 +1,132 @@
+/*
+  Project name(项目名称)：CSS_selector 
+  File name(文件名): t
+  Author(作者）: mao
+  Author QQ：1296193245
+  GitHub：https://github.com/maomao124/
+  Date(创建日期)： 2022/1/21 
+  Time(创建时间)： 20:08
+  Version(版本): 1.0
+  Description(描述)： 选择器由 HTML 元素的 id、class 属性或元素名本身以及一些特殊符号构成，
+  用来指定要为哪个 HTML 元素定义样式。选择器是 CSS 样式规则中重要的组成部分，我们可以将选择器看作是 CSS 样式与 HTML 元素之间的匹配模式，
+  与选择器关联的样式规则会应用于选择器所指定的 HTML 元素上。CSS 中提供了多种不同类型的选择器，您可以根据自己的喜好来选择使用。
+ */
+
+/*1. 通用选择器*/
+/*通用选择器用星号*表示，它不匹配某个特定的 HTML 元素，而是匹配 HTML 文档中的每个元素。在开发中，我们通常使用通用选择器来清除 HTML 元素中默认的内外边距*/
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+
+/*2. 标签选择器*/
+p {
+    color: yellow;
+}
+
+/*p选择器能够匹配文档中所有的<p>标签。*/
+
+
+/*3. ID 选择器*/
+#nav {
+    color: red;
+}
+
+/*ID 选择器用来匹配 HTML 文档中具有指定 ID 属性的标签，ID 选择器的定义需要用到井号#，后面紧跟 ID 属性的值
+#nav选择器能够匹配文档中具有id="nav"属性的标签。*/
+
+
+/*4. 类选择器*/
+.black {
+    color: black;
+}
+
+p.black {
+    color: black;
+}
+
+/*类选择器可以根据标签的 class 属性匹配具体的 HTML 标签，所有符合条件的标签都会根据选择器内的样式进行格式化。
+类选择器的定义需要用到一个英文的句号.，后面紧跟 class 属性的值
+.black选择器能够匹配文档中所有具有class="black"属性的标签。*/
+
+
+/*5. 后代选择器*/
+/*当一个<p>标签嵌套在一个<div>标签内部的时候，就可以将这个<p>标签看作是<div>标签的后代。
+当我们需要选择一个标签的后代标签时，就可以使用后代选择器。后代选择器的定义方式就是将标签名、class 属性或 id 属性等按照标签的嵌套关系由外到内的依次罗列，中间使用空格分开*/
+ul li a {
+    text-decoration: none;
+}
+
+/*ul li a选择器仅会匹配无序列表<ul>标签的所有后代<a>标签。*/
+
+
+/*6. 子选择器*/
+p > strong {
+    color: red;
+}
+
+
+/*7. 相邻兄弟选择器*/
+h1 + p {
+    color: blue;
+    font-size: 18px;
+}
+
+ul.task + p {
+    color: #f0f;
+    text-indent: 30px;
+}
+
+/*相邻兄弟选择器用于匹配某个元素之后紧邻的另一个元素，这两个元素拥有同一个父级元素并且不存在嵌套关系。
+相邻兄弟选择器的定义需要用到加号+，加号两边为相邻的两个元素，选择器会匹配加号后面的元素
+h1 + p选择器会匹配同一父级元素下紧邻<h1>标签并在其后的<p>标签。ul.task + p选择器则会匹配同一父级元素下紧邻<ul>标签并在其后的<p>标签，但<ul>要具有class="task"属性。*/
+
+
+/*8. 通用兄弟选择器*/
+/*h1 ∼ p选择器会匹配同一父级元素下<h1>标签之后的所用<p>标签。*/
+h1 ∼ p {
+    color: blue;
+    font-size: 18px;
+}
+
+
+/*9. 分组选择器*/
+h1 {
+    font-size: 36px;
+    font-weight: normal;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: normal;
+}
+
+h3 {
+    font-size: 22px;
+    font-weight: normal;
+}
+
+h1, h2, h3 {
+    font-weight: normal;
+}
+
+h1 {
+    font-size: 36px;
+}
+
+h2 {
+    font-size: 28px;
+}
+
+h3 {
+    font-size: 22px;
+}
+
+
+/*10. 属性选择器*/
+input[type="text"] {
+    color: blue;
+}
+/*属性选择器用来匹配具有特定属性的元素。属性选择器的定义方式与标签选择器相似，只不过需要在标签的后面使用方括号[ ]来指定标签具有的属性信息
+input[type="text"]选择器会匹配所有具有type="text"属性的<input>标签。*/
